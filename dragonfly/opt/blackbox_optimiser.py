@@ -241,6 +241,14 @@ class BlackboxOptimiser(ExperimentDesigner):
     """ Return the curr_opt_val, curr_opt_point and history. """
     return self.curr_opt_val, self.curr_opt_point, self.history
 
+  def ask(self, n_values=1):
+    if n_values < 1:
+      raise ValueError
+    if n_values == 1:
+      return self._determine_next_query()
+    else:
+      return self._determine_next_batch_of_queries(n_values)
+
 
 # An initialiser class for Optimisers ----------------------------------------------------
 # Can be used to evaluate just a set of initial points.

@@ -65,7 +65,7 @@ class RandomOptimiser(BlackboxOptimiser):
                                           options=options, reporter=reporter)
 
   def _opt_method_set_up(self):
-    """ Any set up specific to otptimisation. """
+    """ Any set up specific to optimisation. """
     pass
 
   def _get_method_str(self):
